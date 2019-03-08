@@ -96,6 +96,7 @@ class SignInForm extends Component {
                   placeholder="Password"
                 />
               </Col>
+
               <Col md={6} lg={{ size: 3, offset: 2 }}>
                 <p className="lead">
                   <Button
