@@ -15,11 +15,11 @@ import App from './components/App'
 import { signOut } from './components/SignOut'
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:8080/graphql',
+  uri: 'http://upis.herokuapp.com/graphql',
 })
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:8080/graphql`,
+  uri: `ws://upis.herokuapp.com/graphql`,
   options: {
     reconnect: true,
   },
@@ -55,7 +55,10 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     graphQLErrors.forEach(({ message, locations, path }) => {
       console.log('GraphQL error', message)
 
-      if (message === 'UNAUTHENTICATED') {
+      if (
+        message === 'UNAUTHENTICATED' ||
+        message === 'Your session expired. Sign in again.'
+      ) {
         signOut(client)
       }
     })

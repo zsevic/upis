@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, Router } from 'react-router-dom'
 
 import Navigation from '../Navigation'
 import LandingPage from '../Landing'
@@ -11,7 +11,7 @@ import * as routes from '../../constants/routes'
 import history from '../../constants/history'
 
 const App = ({ session, refetch }) => (
-  <BrowserRouter history={history} basename="/upis">
+  <Router history={history}>
     <div>
       <Navigation session={session} />
 
@@ -33,7 +33,7 @@ const App = ({ session, refetch }) => (
         component={() => <AccountPage session={session} />}
       />
     </div>
-  </BrowserRouter>
+  </Router>
 )
 
 export default withSession(App)
