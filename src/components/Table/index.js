@@ -90,6 +90,7 @@ export default class TableComponent extends Component {
                                   variables={{
                                     id: department.id,
                                     attribute: key,
+                                    facultyId: this.props.faculty.id,
                                   }}
                                 >
                                   {(
@@ -119,6 +120,7 @@ export default class TableComponent extends Component {
                                   variables={{
                                     id: department.id,
                                     attribute: key,
+                                    facultyId: this.props.faculty.id,
                                   }}
                                 >
                                   {(

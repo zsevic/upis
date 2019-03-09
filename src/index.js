@@ -15,11 +15,13 @@ import App from './components/App'
 import { signOut } from './components/SignOut'
 
 const httpLink = new HttpLink({
-  uri: 'https://upis.herokuapp.com/graphql',
+  uri:
+    process.env.REACT_APP_DEVSERVER ||
+    'https://upis.herokuapp.com/graphql',
 })
 
 const wsLink = new WebSocketLink({
-  uri: `wss://upis.herokuapp.com/graphql`,
+  uri: process.env.REACT_APP_WS || `wss://upis.herokuapp.com/graphql`,
   options: {
     reconnect: true,
   },

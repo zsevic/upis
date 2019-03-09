@@ -2,7 +2,7 @@
 
 > Real-time simulation of muster for enrollment at faculties
 
-See demo: [http://sevic.me/upis](http://sevic.me/upis)
+See demo: [https://sevic.me/upis](https://sevic.me/upis)
 
 ### :arrow_right: Usage
 
@@ -12,6 +12,8 @@ See demo: [http://sevic.me/upis](http://sevic.me/upis)
 
 ```bash
 git clone https://github.com/zsevic/upis
+cd upis
+cp .env.sample .env # change values
 yarn
 yarn start
 ```

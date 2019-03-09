@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 export const UP_PLACE = gql`
-  mutation($id: ID!, $attribute: String!) {
-    upPlace(id: $id, attribute: $attribute) {
+  mutation($id: ID!, $attribute: String!, $facultyId: ID!) {
+    upPlace(id: $id, attribute: $attribute, facultyId: $facultyId) {
       id
       name
       total
@@ -13,8 +13,8 @@ export const UP_PLACE = gql`
 `
 
 export const DOWN_PLACE = gql`
-  mutation($id: ID!, $attribute: String!) {
-    downPlace(id: $id, attribute: $attribute) {
+  mutation($id: ID!, $attribute: String!, $facultyId: ID!) {
+    downPlace(id: $id, attribute: $attribute, facultyId: $facultyId) {
       id
       name
       total
