@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Mutation } from 'react-apollo'
-import gql from 'graphql-tag'
 import { isEmail } from 'validator'
 
 import * as routes from '../../constants/routes'
@@ -18,13 +17,7 @@ import {
   Input,
 } from 'reactstrap'
 
-const SIGN_IN = gql`
-  mutation($login: String!, $password: String!) {
-    signIn(login: $login, password: $password) {
-      token
-    }
-  }
-`
+import * as queries from './queries'
 
 const SignInPage = ({ history, refetch }) => (
   <div>
@@ -68,7 +61,10 @@ class SignInForm extends Component {
     const isInvalid = password.length < 7 || !isEmail(login)
 
     return (
-      <Mutation mutation={SIGN_IN} variables={{ login, password }}>
+      <Mutation
+        mutation={queries.SIGN_IN}
+        variables={{ login, password }}
+      >
         {(signIn, { data, loading, error }) => (
           <Form onSubmit={event => this.onSubmit(event, signIn)}>
             <Row form>

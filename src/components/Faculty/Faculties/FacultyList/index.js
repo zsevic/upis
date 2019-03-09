@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Table from '../Landing/Table'
 
+import Table from './Table'
 import * as queries from './queries'
 
 export default class FacultyList extends Component {
@@ -11,8 +11,6 @@ export default class FacultyList extends Component {
         if (!subscriptionData.data) {
           return previousResult
         }
-
-        // const { departmentUpdated } = subscriptionData.data
 
         return previousResult
       },
