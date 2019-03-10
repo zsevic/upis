@@ -6,7 +6,7 @@ See demo: [https://sevic.me/upis](https://sevic.me/upis)
 
 ### :arrow_right: Usage
 
-- User can login and change values for the rest of the places for departments at his/her faculty
+- User can login (email: user1@users.com, password: userresu) and change values for the rest of the places for departments at his/her faculty
 
 ### :wrench: Setup
 
