@@ -23,3 +23,7 @@ yarn start
 ```bash
 yarn deploy
 ```
+
+### :package: Technologies used
+
+- React, Apollo
