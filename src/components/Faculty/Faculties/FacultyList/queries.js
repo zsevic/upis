@@ -1,14 +1,20 @@
 import gql from 'graphql-tag'
 
-export const DEPARTMENT_UPDATED = gql`
+export const FACULTY_UPDATED = gql`
   subscription {
-    departmentUpdated {
-      department {
+    facultyUpdated {
+      faculty {
         id
         name
-        total
-        budget
-        selfFinancing
+        counter
+        createdAt
+        departments {
+          id
+          name
+          total
+          budget
+          selfFinancing
+        }
       }
     }
   }

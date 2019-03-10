@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Spinner } from 'reactstrap'
 import { Query } from 'react-apollo'
 
-import Table from '../Table'
+import Table from './Table'
 import * as queries from './queries'
 
 import withAuthorization from '../Session/withAuthorization'
@@ -10,7 +10,7 @@ import withAuthorization from '../Session/withAuthorization'
 const Account = ({ session }) => (
   <div>
     <Query
-      query={queries.GET_STATS}
+      query={queries.GET_FACULTY}
       variables={{ id: session.me.faculty.id }}
     >
       {({ data, loading }) => {

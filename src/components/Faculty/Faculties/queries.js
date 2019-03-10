@@ -6,6 +6,7 @@ export const GET_PAGINATED_FACULTIES_WITH_DEPARTMENTS = gql`
       edges {
         id
         name
+        counter
         createdAt
         departments {
           id

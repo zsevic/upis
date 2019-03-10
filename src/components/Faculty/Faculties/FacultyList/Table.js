@@ -6,6 +6,9 @@ const TableComponent = ({ faculty }) => (
     <Badge color="primary" pill>
       {faculty.name}
     </Badge>
+    <Badge color="danger" pill>
+      {faculty.counter}
+    </Badge>
     <Table responsive hover>
       <thead>
         <tr>

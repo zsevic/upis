@@ -68,6 +68,7 @@ const MoreFacultiesButton = ({
           if (!fetchMoreResult) {
             return previousResult
           }
+
           return {
             faculties: {
               ...fetchMoreResult.faculties,

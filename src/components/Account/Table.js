@@ -11,19 +11,15 @@ export default class TableComponent extends Component {
     super(props)
 
     this.state = {
+      counter: this.props.faculty.counter,
       departments: [...this.props.faculty.departments],
     }
   }
 
-  upPlace = async (index, upPlaceMutation) => {
-    const { data } = await upPlaceMutation()
-    const { upPlace } = data
+  incrementCounter = async upPlaceMutation => {
+    await upPlaceMutation()
 
-    const { departments } = this.state
-
-    departments[index] = { ...upPlace }
-
-    this.setState({ departments })
+    this.setState({ counter: this.state.counter + 1 })
   }
 
   downPlace = async (index, key, downPlaceMutation) => {
@@ -35,7 +31,7 @@ export default class TableComponent extends Component {
 
     departments[index] = { ...downPlace }
 
-    this.setState({ departments })
+    this.setState({ departments, counter: this.state.counter + 1 })
   }
 
   render() {
@@ -43,6 +39,27 @@ export default class TableComponent extends Component {
       <div>
         <Badge color="primary" pill>
           {this.props.faculty.name}
+        </Badge>
+        <Badge color="danger" pill>
+          {this.state.counter}{' '}
+          {this.props.session.me ? (
+            <Mutation
+              mutation={queries.INCREMENT_COUNTER}
+              variables={{
+                facultyId: this.props.faculty.id,
+              }}
+            >
+              {(upPlaceMutation, { data, loading, error }) => (
+                <ArrowDropUp
+                  onClick={() =>
+                    this.incrementCounter(upPlaceMutation)
+                  }
+                />
+              )}
+            </Mutation>
+          ) : (
+            ''
+          )}
         </Badge>
         <Table responsive hover>
           <thead>
@@ -83,7 +100,7 @@ export default class TableComponent extends Component {
                                 1,
                               )}`}
                             >
-                              {this.props.session &&
+                              {/*                               {this.props.session &&
                               this.props.session.me ? (
                                 <Mutation
                                   mutation={queries.UP_PLACE}
@@ -109,7 +126,7 @@ export default class TableComponent extends Component {
                                 </Mutation>
                               ) : (
                                 ''
-                              )}
+                              )} */}
 
                               {this.state.departments[index][key]}
 
