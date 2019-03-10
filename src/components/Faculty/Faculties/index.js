@@ -14,7 +14,7 @@ const Faculties = ({ limit }) => (
       >
         {({ data, loading, error, fetchMore, subscribeToMore }) => {
           if (!data) {
-            return <div>There are no faculties...</div>
+            return <div>Network error...</div>
           }
 
           const { faculties } = data

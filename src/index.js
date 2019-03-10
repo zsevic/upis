@@ -71,6 +71,9 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
     if (networkError.statusCode === 401) {
       signOut(client)
+    } else {
+      localStorage.removeItem('token')
+      client.resetStore()
     }
   }
 })
