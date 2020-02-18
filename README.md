@@ -2,7 +2,7 @@
 
 > Real-time simulation of muster for enrollment at faculties
 
-See demo: [https://sevic.me/upis](https://sevic.me/upis)
+See demo: [https://sevic.dev/upis](https://sevic.dev/upis)
 
 ### :arrow_right: Usage
 
