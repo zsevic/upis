@@ -11,6 +11,7 @@ import {
   DropdownItem,
 } from 'reactstrap'
 
+import logo from '../../logo.svg'
 import SignOut from '../SignOut'
 import { Link } from 'react-router-dom'
 export default class Navigation extends Component {
@@ -32,7 +33,8 @@ export default class Navigation extends Component {
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand>
-            <Link to="/">upis</Link>
+            <img src={logo} alt="logo" />
+            <Link to="/">Upis</Link>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
